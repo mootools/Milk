@@ -19,3 +19,6 @@
 [submodule "Table"]
 	path = Table
 	url = git://github.com/mootools/Table.git
+[submodule "slick"]
+	path = slick
+	url = git://github.com/mootools/slick.git
