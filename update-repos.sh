@@ -5,10 +5,11 @@ do
 	cd $repo/..
 	echo "updating $(pwd)"
 	remote='origin'
-	if [[ `git remote | grep mootools` ]]; then
+	if [ `git remote | grep mootools` ]; then
 		remote='mootools'
 	fi
 	git fetch $remote
 	git reset --hard $remote/master
 	cd ..
 done
+
