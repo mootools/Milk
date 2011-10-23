@@ -22,3 +22,6 @@
 [submodule "slick"]
 	path = slick
 	url = git://github.com/mootools/slick.git
+[submodule "Sprinter"]
+	path = Sprinter
+	url = git://github.com/mootools/Sprinter.git
