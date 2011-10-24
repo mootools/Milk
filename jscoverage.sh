@@ -18,8 +18,10 @@ else
 	done
 fi
 
+test -d coverage || mkdir coverage
+
 for M in $MODULES; do
 	echo "creating $M-coverage..."
-	test -d "$TARGET/$M-coverage" && rm -r "$TARGET/$M-coverage"
-	$JSCOVERAGE $OPTIONS "$SOURCE/$M" "$TARGET/$M-coverage"
+	test -d "$TARGET/coverage/$M" && rm -r "$TARGET/coverage/$M"
+	$JSCOVERAGE $OPTIONS "$SOURCE/$M" "$TARGET/coverage/$M"
 done
