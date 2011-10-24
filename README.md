@@ -29,3 +29,36 @@ Testing
 -------
 
 Testing will be done with our test suite *Sprinter*. Soon, in the near future, each repository will have a `Spec` folder containing all the specs for that project. Sprinter uses [Jasmine](https://github.com/pivotal/jasmine/wiki) and (usually) Require.JS.
+
+### Coverage
+
+Code coverage can be tested with [JSCoverage](http://siliconforks.com/jscoverage/). Once you've got JSCoverage installed, there are two sh scripts that can help to analize the coverage:
+
+#### jscoverage.sh
+
+Example `./jscoverage.sh` or `./jscoverage Base DOM`.
+This will generate a new folder in the `coverage` folder with a `jscoverage.html` file. If this file is accessed (through a (local)) server, it will analize the coverage. To instantly run the specs, browse to:
+
+    http://localhost/coverage/Base/jscoverage.html?Specs/SpecRunner.html
+
+In the *Summary* tab, you will see which lines are executed, and covered by the specs.
+
+#### jscoverage-server.sh
+
+Because some code is for specific browsers only, running the coverage in one browser is often not enough. With jscoverage-server it is possible to save te results for multiple browsers which are joined in one result.
+
+    ./jscoverage-server.sh Base
+
+This command will start a new server for the Base repository. Now you should the specs in multiple browsers and save the results. In most cases the URL that shoudl be opened is `http://127.0.0.1:8080/jscoverage.html?Specs/SpecRunner.html`.
+
+When this is done, the results are saved in `coverage/Base-results` with a `jscoverage.html` file which can be vieuwed in a browser.
+
+
+### Updating all repositories
+
+To update each repository to the latest version, running the following command will update each submodule to it's latest version:
+
+    ./update-repos.sh
+
+Be careful if you have unpushed commits in the master branches, because it might overwrite them.
+
